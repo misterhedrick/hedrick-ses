@@ -1,0 +1,255 @@
+@import "./variables";
+html {
+  min-height: 100vh;
+}
+body {
+  margin: 0;
+  background-color: $main-bg;
+  font-family: "Roboto", sans-serif;
+}
+
+.photo-bg > * {
+  color: $light-text;
+}
+
+.container {
+  padding: 5rem 0;
+}
+
+@media (max-width: 959px) {
+  .hide-mobile {
+    display: none !important;
+  }
+  .container {
+    width: 95%;
+    margin: auto;
+  }
+  .photo-bg {
+    background: url("../img/laptop-background.jpg") no-repeat center center
+      scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+  .col-wrap {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+}
+@media (min-width: 960px) {
+  .hide-desktop {
+    display: none;
+  }
+  .container {
+    width: 70%;
+    margin: auto;
+  }
+  .photo-bg {
+    background: url("../img/laptop-background.jpg") no-repeat center center
+      fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+  .col-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+}
+
+section {
+  background-color: $main-bg;
+  min-height: 75vh;
+}
+
+.section-title {
+  font-size: 48px;
+  font-weight: 600;
+  line-height: normal;
+  margin: 0 0 16px;
+}
+.list-container {
+  display: flex;
+}
+.pill {
+  color: $dark-text;
+  background-color: darken($main-bg, 20);
+  border-radius: 25px;
+  margin: 8px 10px;
+  width: 100%;
+}
+
+.col-1 {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+// Achievement Styles
+.achievements-section .section-title {
+  text-align: center;
+}
+.achievement {
+  width: 50%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.achievement > h2 {
+  margin: 1rem;
+}
+
+// Experience Styles
+
+//Footer Styles
+.main-footer {
+  position: sticky;
+  bottom: 0px;
+  background-color: $main-bg;
+  color: $dark-text;
+  width: 100%;
+  height: 40px;
+}
+.main-footer-items {
+  display: flex;
+  justify-content: space-evenly;
+  height: 100%;
+}
+.main-footer-item {
+  display: inline-block;
+  align-self: center;
+  cursor: pointer;
+}
+.main-footer-item:hover,
+.main-footer-item:active {
+  text-decoration: underline;
+}
+
+// Header Styles
+.transparentNav {
+  background-color: transparent;
+  color: $light-text;
+  .main-header-nav-item:hover,
+  .main-header-nav-item:active {
+    text-decoration: underline;
+    color: darken($light-text, 20);
+  }
+}
+.whiteNav {
+  background-color: $main-bg;
+  color: $dark-text;
+  border-bottom: #000000 2px solid;
+  .main-header-nav-item:hover,
+  .main-header-nav-item:active {
+    text-decoration: underline;
+    color: lighten($dark-text, 20);
+  }
+}
+.main-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  font-weight: bold;
+  font-size: 20px;
+}
+.main-header-title {
+  flex-grow: 0;
+  padding-left: 20px;
+  font-size: 28px;
+}
+.main-header-nav {
+  flex-grow: 1;
+}
+.main-header-nav-items {
+  display: flex;
+  justify-content: flex-end;
+}
+.main-header-nav-item {
+  padding: 0 10px;
+  list-style-type: none;
+  cursor: pointer;
+}
+
+// Home Styles
+.home-section {
+  height: calc(100vh);
+  padding-top: 40px;
+  display: flex;
+}
+.home-section h1 {
+  align-self: center;
+  color: $light-text;
+  text-align: center;
+  width: 100%;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  -webkit-text-stroke: 2px black; /* width and color */
+}
+@media (min-width: 992px) {
+  .home-section h1 {
+    font-size: 6rem !important;
+  }
+}
+
+@media (max-width: 991px) {
+  .home-section h1 {
+    font-size: 3rem !important;
+  }
+}
+
+// Languages Styles
+.languages-section .section-title {
+  text-align: center;
+}
+.languages-section h2 {
+  margin: 0;
+  text-align: center;
+}
+.list-container {
+  width: 100%;
+  margin: 0;
+}
+@media (min-width: 960px) {
+  .languages-section .pill {
+    width: calc(50% - 20px);
+  }
+}
+@media (max-width: 959px) {
+  .languages-section .pill {
+    width: 90%;
+  }
+  .languages-section .col-wrap {
+    align-items: center;
+  }
+}
+
+.languages-section .pill:hover {
+  background-color: $main-bg;
+  transform: translateY(-3px);
+}
+.pill-container {
+  width: 90%;
+  padding: 10px 1rem;
+}
+
+// Me Styles
+.me-section .container {
+  display: flex;
+}
+.me-section .description {
+  flex: 1;
+}
+.me-section .description h4 {
+  font-size: 1.25rem;
+}
+.description img {
+  float: left;
+  max-width: 60%;
+  padding-right: 15px;
+}
