@@ -1,0 +1,108 @@
+/*******************
+   ** Media Queries **
+   *******************/
+
+$mq-screen: "screen";
+$mq-landscape: "screen and (orientation: landscape) and (max-width: 768px)"; // landscape
+$mq-small: "screen and (min-width: 375px)"; // mobile
+$mq-medium: "screen and (min-width: 768px)"; //tablet
+$mq-large: "screen and (min-width: 1024px)"; // large tablet
+$mq-xlarge: "screen and (min-width: 1440px)"; //desktop
+$mq-largest: "screen and (min-width: 1920px)"; // large desktop
+
+// Variables
+$white: #fff;
+$black: #000;
+$Pica: "IM Fell DW Pica", serif;
+$Pica-SC: "IM Fell DW Pica SC", serif;
+$Iceland: "Iceland", sans-sarif;
+$HeaderHeight: 40px;
+$main-bg: whitesmoke;
+$dark-text: #333333;
+$light-text: whitesmoke;
+
+body {
+  font-size: 16px;
+  color: $white;
+  background-color: $black;
+  font-family: $Pica;
+  margin-top: calc($HeaderHeight + 1em);
+  height: 100%;
+
+  img {
+    max-width: 100%;
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: $black;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: $white;
+    border-radius: 6px;
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgb(223, 222, 222);
+  }
+}
+
+body {
+  font-size: 3vw;
+
+  @media #{$mq-medium} {
+    font-size: 2vw;
+  }
+
+  @media #{$mq-large} {
+    font-size: 1.8vw;
+  }
+
+  @media #{$mq-xlarge} {
+    font-size: 1em;
+  }
+}
+
+h1 {
+  font-size: 3.5em;
+
+  @media #{$mq-medium} {
+    font-size: 5.3em;
+  }
+
+  @media #{$mq-large} {
+    font-size: 3.25em;
+  }
+
+  @media #{$mq-xlarge} {
+    font-size: 4.5em;
+  }
+}
+
+h2 {
+  font-size: 3.5em;
+
+  @media #{$mq-medium} {
+    font-size: 5.3em;
+  }
+
+  @media #{$mq-large} {
+    font-size: 3.25em;
+  }
+
+  @media #{$mq-xlarge} {
+    font-size: 4.5em;
+  }
+}
+
+p {
+  font-size: 1.42em;
+  font-family: $Pica;
+}

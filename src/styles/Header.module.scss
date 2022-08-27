@@ -1,0 +1,51 @@
+@import "./variables";
+@import './setup.scss';
+
+.transparentNav {
+    background-color: transparent;
+    color: $light-text;
+    .mainHeaderNavItem:hover,
+    .mainHeaderNavItem:active {
+      text-decoration: underline;
+      color: darken($light-text, 20);
+    }
+  }
+  .whiteNav {
+    background-color: $main-bg;
+    color: $dark-text;
+    border-bottom: #000000 2px solid;
+    .mainHeaderNavItem:hover,
+    .mainHeaderNavItem:active {
+      text-decoration: underline;
+      color: lighten($dark-text, 20);
+    }
+  }
+  .mainHeader {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    font-weight: bold;
+    font-size: 20px;
+    padding: 5px 0;
+    height: $HeaderHeight;
+  }
+  .mainHeaderTitle {
+    flex-grow: 0;
+    padding-left: 20px;
+    font-size: 28px;
+  }
+  .mainHeaderNav {
+    flex-grow: 1;
+  }
+  .mainHeaderNavItems {
+    display: flex;
+    justify-content: flex-end;
+  }
+  .mainHeaderNavItem {
+    padding: 0 10px;
+    list-style-type: none;
+    cursor: pointer;
+  }

@@ -1,27 +1,30 @@
+import React from 'react';
+import styles from '../styles/Header.module.scss';
+
 const Header = (props) => {
   return (
-    <header id="main-header" class="main-header whiteNav hide-mobile">
-      <div class="main-header-title" id="main-header-title">
+    <header id="mainHeader" className={[styles.mainHeader, styles.whiteNav].join(' ')}>
+      <div className={styles.mainHeaderTitle} id="mainHeaderTitle">
         Daniel
       </div>
-      <nav class="main-header-nav">
-        <ul class="main-header-nav-items">
-          <li class="main-header-nav-item" onclick="scrollToByID('home')">
+      <nav className={styles.mainHeaderNav}>
+        <ul className={styles.mainHeaderNavItems}>
+          <li className={styles.mainHeaderNavItem} onclick="scrollToByID('home')">
             Home
           </li>
-          <li class="main-header-nav-item" onclick="scrollToByID('me')">
+          <li className={styles.mainHeaderNavItem} onclick="scrollToByID('me')">
             Me
           </li>
-          <li class="main-header-nav-item" onclick="scrollToByID('languages')">
+          <li className={styles.mainHeaderNavItem} onclick="scrollToByID('languages')">
             Languages
           </li>
           <li
-            class="main-header-nav-item"
+            className={styles.mainHeaderNavItem}
             onclick="scrollToByID('achievements')"
           >
             Achievements
           </li>
-          <li class="main-header-nav-item" onclick="scrollToByID('experience')">
+          <li className={styles.mainHeaderNavItem} onclick="scrollToByID('experience')">
             Experience
           </li>
         </ul>
