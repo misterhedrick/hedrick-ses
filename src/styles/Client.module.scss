@@ -1,0 +1,17 @@
+@import './setup.scss';
+
+.Client {
+    border-top: 3px;
+    border-bottom: 3px; 
+    border-style: solid;
+}
+.Client:first-child{
+    border: inherit;
+    border-bottom: 3px; 
+    border-style: solid;
+}
+.Client:last-child{
+    border: inherit;
+    border-top: 3px; 
+    border-style: solid;
+}

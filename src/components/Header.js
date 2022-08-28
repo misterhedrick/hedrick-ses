@@ -5,7 +5,7 @@ const Header = (props) => {
   return (
     <header id="mainHeader" className={[styles.mainHeader, styles.whiteNav].join(' ')}>
       <div className={styles.mainHeaderTitle} id="mainHeaderTitle">
-        Daniel
+        Hedrick Small Engine Shop
       </div>
       <nav className={styles.mainHeaderNav}>
         <ul className={styles.mainHeaderNavItems}>
@@ -13,19 +13,10 @@ const Header = (props) => {
             Home
           </li>
           <li className={styles.mainHeaderNavItem} onclick="scrollToByID('me')">
-            Me
+            Add
           </li>
           <li className={styles.mainHeaderNavItem} onclick="scrollToByID('languages')">
-            Languages
-          </li>
-          <li
-            className={styles.mainHeaderNavItem}
-            onclick="scrollToByID('achievements')"
-          >
-            Achievements
-          </li>
-          <li className={styles.mainHeaderNavItem} onclick="scrollToByID('experience')">
-            Experience
+            Login
           </li>
         </ul>
       </nav>
