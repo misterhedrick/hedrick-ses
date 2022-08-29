@@ -5,6 +5,7 @@ import Home from "./pages/Home";
 import Admin from "./pages/Admin";
 import ClientDetails from "./pages/ClientDetails";
 import ItemDetails from "./pages/ItemDetails";
+import LoginModal from "./components/UI/LoginModal";
 
 import "./styles/reset.css";
 import "./styles/setup.scss";
@@ -21,6 +22,7 @@ function App() {
         <Route path="/Admin" element={<Admin />} />
       </Routes>
       <Footer />
+      {/* <LoginModal /> */}
     </div>
   );
 }
