@@ -5,6 +5,11 @@
     border-bottom: 3px; 
     border-style: solid;
     cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1em;
 }
 .Client:first-child{
     border: inherit;

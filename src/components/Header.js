@@ -9,13 +9,13 @@ const Header = (props) => {
       </div>
       <nav className={styles.mainHeaderNav}>
         <ul className={styles.mainHeaderNavItems}>
-          <li className={styles.mainHeaderNavItem} onclick="scrollToByID('home')">
+          <li className={styles.mainHeaderNavItem}>
             Home
           </li>
-          <li className={styles.mainHeaderNavItem} onclick="scrollToByID('me')">
+          <li className={styles.mainHeaderNavItem}>
             Add
           </li>
-          <li className={styles.mainHeaderNavItem} onclick="scrollToByID('languages')">
+          <li className={styles.mainHeaderNavItem}>
             Login
           </li>
         </ul>

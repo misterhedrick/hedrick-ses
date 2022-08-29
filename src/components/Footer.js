@@ -1,18 +1,22 @@
-import styles from '../styles/Footer.module.scss';
+import styles from "../styles/Footer.module.scss";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faCirclePlus,
+  faHouse,
+  faUser,
+} from "@fortawesome/free-solid-svg-icons";
+
+const plusIcon = <FontAwesomeIcon icon={faCirclePlus} size="2x"/>;
+const houseIcon = <FontAwesomeIcon icon={faHouse} size="2x"/>;
+const userIcon = <FontAwesomeIcon icon={faUser} size="2x"/>;
 
 const Footer = (props) => {
   return (
     <footer className={styles.mainFooter}>
       <div className={styles.mainFooterItems}>
-        <div className={styles.mainFooterItem} onclick="scrollToByID('home')">
-          <i class="fas fa-home fa-2x">home</i>
-        </div>
-        <div className={styles.mainFooterItem} onclick="scrollToByID('me')">
-          <i class="fas fa-user fa-2x">Add</i>
-        </div>
-        <div className={styles.mainFooterItem} onclick="scrollToByID('languages')">
-          <i class="fas fa-laptop-code fa-2x">Login</i>
-        </div>
+        <div className={styles.mainFooterItem}>{houseIcon}</div>
+        <div className={styles.mainFooterItem}>{plusIcon}</div>
+        <div className={styles.mainFooterItem}>{userIcon}</div>
       </div>
     </footer>
   );
