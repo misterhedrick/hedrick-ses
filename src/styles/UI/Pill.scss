@@ -1,0 +1,19 @@
+@import '../setup.scss';
+.pill a{
+    background-color: $main-bg;
+    color: $dark-text;
+    margin: 1em auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1em;
+    width: 75%;
+    border-radius: 3em;
+}
+.pill:first-child a{
+    margin-top: calc($HeaderHeight + 2em);
+}
+.pill:hover a{
+    background-color: $darker-bg;
+}

@@ -1,25 +1,29 @@
-import React from 'react';
-import styles from '../styles/Header.module.scss';
+import React from "react";
+// import { NavLink } from "react-router-dom";
+import styles from "../styles/Header.module.scss";
 
 const Header = (props) => {
   return (
-    <header id="mainHeader" className={[styles.mainHeader, styles.whiteNav].join(' ')}>
+    <header
+      id="mainHeader"
+      className={[styles.mainHeader, styles.whiteNav].join(" ")}
+    >
       <div className={styles.mainHeaderTitle} id="mainHeaderTitle">
         Hedrick Small Engine Shop
       </div>
-      <nav className={styles.mainHeaderNav}>
-        <ul className={styles.mainHeaderNavItems}>
-          <li className={styles.mainHeaderNavItem}>
+      {/* <nav className={styles.mainHeaderNav}>
+        <div className={styles.mainHeaderNavItems}>
+          <NavLink className={styles.mainHeaderNavItem} to="">
             Home
-          </li>
-          <li className={styles.mainHeaderNavItem}>
+          </NavLink>
+          <NavLink className={styles.mainHeaderNavItem} to="">
             Add
-          </li>
-          <li className={styles.mainHeaderNavItem}>
+          </NavLink>
+          <NavLink className={styles.mainHeaderNavItem} to="/Admin">
             Login
-          </li>
-        </ul>
-      </nav>
+          </NavLink>
+        </div>
+      </nav> */}
     </header>
   );
 };

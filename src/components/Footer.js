@@ -1,3 +1,5 @@
+import { NavLink } from "react-router-dom";
+
 import styles from "../styles/Footer.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -14,9 +16,9 @@ const Footer = (props) => {
   return (
     <footer className={styles.mainFooter}>
       <div className={styles.mainFooterItems}>
-        <div className={styles.mainFooterItem}>{houseIcon}</div>
-        <div className={styles.mainFooterItem}>{plusIcon}</div>
-        <div className={styles.mainFooterItem}>{userIcon}</div>
+        <NavLink to="" className={styles.mainFooterItem}>{houseIcon}</NavLink>
+        <NavLink to="" className={styles.mainFooterItem}>{plusIcon}</NavLink>
+        <NavLink to="/Admin" className={styles.mainFooterItem}>{userIcon}</NavLink>
       </div>
     </footer>
   );
