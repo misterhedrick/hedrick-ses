@@ -17,8 +17,8 @@ const Footer = (props) => {
     <footer className={styles.mainFooter}>
       <div className={styles.mainFooterItems}>
         <NavLink to="" className={styles.mainFooterItem}>{houseIcon}</NavLink>
-        <NavLink to="" className={styles.mainFooterItem}>{plusIcon}</NavLink>
-        <NavLink to="/Admin" className={styles.mainFooterItem}>{userIcon}</NavLink>
+        <NavLink to="/add" className={styles.mainFooterItem}>{plusIcon}</NavLink>
+        <NavLink to="/login" className={styles.mainFooterItem}>{userIcon}</NavLink>
       </div>
     </footer>
   );
