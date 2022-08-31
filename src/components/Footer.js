@@ -8,9 +8,9 @@ import {
   faUser,
 } from "@fortawesome/free-solid-svg-icons";
 
-const plusIcon = <FontAwesomeIcon icon={faCirclePlus} size="2x"/>;
-const houseIcon = <FontAwesomeIcon icon={faHouse} size="2x"/>;
-const userIcon = <FontAwesomeIcon icon={faUser} size="2x"/>;
+const plusIcon = <FontAwesomeIcon icon={faCirclePlus} size="3x"/>;
+const houseIcon = <FontAwesomeIcon icon={faHouse} size="3x"/>;
+const userIcon = <FontAwesomeIcon icon={faUser} size="3x"/>;
 
 const Footer = (props) => {
   return (
