@@ -9,31 +9,7 @@ const ClientDetails = (props) => {
   return (
     <div>
       <h1>Client Name From ID</h1>
-      <Pill>
-        <Link to="/client/1/1">
-          <h1>Name 1</h1>
-        </Link>
-      </Pill>
-      <Pill>
-        <Link to="/client/1/1">
-          <h1>Name 1</h1>
-        </Link>
-      </Pill>
-      <Pill>
-        <Link to="/client/1/1">
-          <h1>Name 1</h1>
-        </Link>
-      </Pill>
-      <Pill>
-        <Link to="/client/1/1">
-          <h1>Name 1</h1>
-        </Link>
-      </Pill>
-      <Pill>
-        <Link to="/client/1/1">
-          <h1>Name 1</h1>
-        </Link>
-      </Pill>
+      
     </div>
   );
 };

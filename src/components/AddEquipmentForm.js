@@ -4,7 +4,7 @@ import { collection, addDoc } from "firebase/firestore";
 import Card from "./UI/Card";
 import Form from "./UI/Form";
 
-const AddClientForm = (props) => {
+const AddEquipmentForm = (props) => {
   const [enteredName, setEnteredName] = useState("");
   const [enteredPhone, setEnteredPhone] = useState("");
 
@@ -18,7 +18,7 @@ const AddClientForm = (props) => {
   };
 
   /* function to add new task to firestore */
-  const addClientHandler = async (event) => {
+  const addEquipmentHandler = async (event) => {
     event.preventDefault();
     setEnteredName("");
     setEnteredPhone("");
@@ -34,7 +34,7 @@ const AddClientForm = (props) => {
 
   return (
     <Card>
-      <Form onSubmit={addClientHandler}>
+      <Form onSubmit={addEquipmentHandler}>
         <span>
           <label htmlFor="username">Username</label>
           <input
@@ -60,4 +60,4 @@ const AddClientForm = (props) => {
     </Card>
   );
 };
-export default AddClientForm;
+export default AddEquipmentForm;

@@ -12,7 +12,7 @@ const ClientList = (props) => {
 
   /* function to get all tasks from firestore in realtime */
   useEffect(() => {
-    const q = query(collection(db, "clients"));
+    const q = query(collection(db, "clients"), orderBy('name', 'asc'));
     onSnapshot(q, (querySnapshot) => {
       setClients(
         querySnapshot.docs.map((doc) => ({
