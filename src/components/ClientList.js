@@ -22,12 +22,11 @@ const ClientList = (props) => {
       );
     });
   }, []);
-  console.log('clients: ' + clients);
   return (
     <div>
       {clients.map((client) => (
         <Pill id={client.id} key={client.id}>
-          <Link to={client.data.name}>
+          <Link to={'client/' + client.id}>
             <h1>{client.data.name}</h1>
             <div>{phoneIcon}</div>
           </Link>

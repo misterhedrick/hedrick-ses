@@ -1,47 +1,37 @@
-import { useState } from "react";
+import { useRef } from "react";
 import { db } from "../firebase";
 import { collection, addDoc } from "firebase/firestore";
 import Card from "./UI/Card";
 import Form from "./UI/Form";
 
 const AddClientForm = (props) => {
-  const [enteredName, setEnteredName] = useState("");
-  const [enteredPhone, setEnteredPhone] = useState("");
-
-  const nameChangeHandler = (event) => {
-    setEnteredName(event.target.value);
-    console.log(enteredName);
-  };
-
-  const phoneChangeHandler = (event) => {
-    setEnteredPhone(event.target.value);
-  };
+  const nameInputRef = useRef();
+  const phoneInputRef = useRef();
 
   /* function to add new task to firestore */
   const addClientHandler = async (event) => {
     event.preventDefault();
-    setEnteredName("");
-    setEnteredPhone("");
+    const name = nameInputRef.current.value;
+    const phone = phoneInputRef.current.value;
+    const newclient = {name: name, phone: phone};
     try {
-      await addDoc(collection(db, "clients"), {
-        name: enteredName,
-        phone: enteredPhone,
-      });
+      await addDoc(collection(db, "clients"), newclient);
     } catch (err) {
       alert(err);
     }
+    nameInputRef.current.value = '';
+    phoneInputRef.current.value = '';
   };
 
   return (
     <Card>
       <Form onSubmit={addClientHandler}>
         <span>
-          <label htmlFor="username">Username</label>
+          <label htmlFor="username">Name</label>
           <input
-            id="username"
+            id="name"
             type="text"
-            value={enteredName}
-            onChange={nameChangeHandler}
+            ref={nameInputRef}
           />
         </span>
         <span>
@@ -49,8 +39,7 @@ const AddClientForm = (props) => {
           <input
             id="phone"
             type="number"
-            value={enteredPhone}
-            onChange={phoneChangeHandler}
+            ref={phoneInputRef}
           />
         </span>
         <span>
