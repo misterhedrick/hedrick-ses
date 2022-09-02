@@ -1,6 +1,4 @@
-import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
-import Pill from "../components/UI/Pill";
 
 const ClientDetails = (props) => {
   const params = useParams();
