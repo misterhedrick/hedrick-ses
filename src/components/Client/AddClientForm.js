@@ -1,8 +1,8 @@
 import { useRef } from "react";
-import { db } from "../firebase";
+import { db } from "../../firebase";
 import { collection, addDoc } from "firebase/firestore";
-import Card from "./UI/Card";
-import Form from "./UI/Form";
+import Card from "../UI/Card";
+import Form from "../UI/Form";
 
 const AddClientForm = (props) => {
   const nameInputRef = useRef();

@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
-import Pill from "./UI/Pill";
+import Pill from "../UI/Pill";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPhone } from "@fortawesome/free-solid-svg-icons";
 import { useState, useEffect } from "react";
 import { collection, query, orderBy, onSnapshot } from "firebase/firestore";
-import { db } from "../firebase";
+import { db } from "../../firebase";
 
 const phoneIcon = <FontAwesomeIcon icon={faPhone} size="3x" />;
 const ClientList = (props) => {

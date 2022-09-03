@@ -1,4 +1,4 @@
-import ClientList from "../components/ClientList";
+import ClientList from "../components/Client/ClientList";
 
 const Home = (props) => {
     return (

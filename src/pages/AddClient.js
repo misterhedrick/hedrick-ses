@@ -1,4 +1,4 @@
-import AddClientForm from "../components/AddClientForm";
+import AddClientForm from "../components/Client/AddClientForm";
 
 const AddClient = (props) => {
   

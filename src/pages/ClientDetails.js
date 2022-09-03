@@ -1,15 +1,13 @@
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { collection, query, onSnapshot } from "firebase/firestore";
+import { query, onSnapshot } from "firebase/firestore";
 import { db } from "../firebase";
-import { doc, getDoc } from "firebase/firestore";
+import { doc } from "firebase/firestore";
 
 const ClientDetails = (props) => {
   const params = useParams();
-  console.log("params " + params.clientId);
   const [client, setClient] = useState([]);
 
-  /* function to get all tasks from firestore in realtime */
   useEffect(() => {
     const q = query(doc(db, "clients", params.clientId));
     onSnapshot(q, (querySnapshot) => {
