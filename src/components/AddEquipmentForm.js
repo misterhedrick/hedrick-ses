@@ -1,60 +1,78 @@
-import { useState } from "react";
+import { useRef } from "react";
 import { db } from "../firebase";
 import { collection, addDoc } from "firebase/firestore";
 import Card from "./UI/Card";
 import Form from "./UI/Form";
 
 const AddEquipmentForm = (props) => {
-  const [enteredName, setEnteredName] = useState("");
-  const [enteredPhone, setEnteredPhone] = useState("");
-
-  const nameChangeHandler = (event) => {
-    setEnteredName(event.target.value);
-    console.log(enteredName);
-  };
-
-  const phoneChangeHandler = (event) => {
-    setEnteredPhone(event.target.value);
-  };
+  const brandnameInputRef = useRef();
+  const modelNumInputRef = useRef();
+  const typeInputRef = useRef();
 
   /* function to add new task to firestore */
   const addEquipmentHandler = async (event) => {
     event.preventDefault();
-    setEnteredName("");
-    setEnteredPhone("");
-    try {
-      await addDoc(collection(db, "clients"), {
-        name: enteredName,
-        phone: enteredPhone,
-      });
-    } catch (err) {
-      alert(err);
-    }
+    const brandName = brandnameInputRef.current.value;
+    const modelNum = modelNumInputRef.current.value;
+    const type = typeInputRef.current.value;
+    const newEquipment = {brandName: brandName, modelNum: modelNum, type: type};
+      try {
+        await addDoc(collection(db, `clients/${props.id}/equipment`), newEquipment);
+      } catch (err) {
+        alert(err);
+      }
+      props.onAddEquipment();
+      brandnameInputRef.current.value = '';
+      modelNumInputRef.current.value = '';
+      typeInputRef.current.value = '';
+
   };
 
   return (
     <Card>
       <Form onSubmit={addEquipmentHandler}>
-        <span>
-          <label htmlFor="username">Username</label>
+        <span className="span">
+          <label className="label" htmlFor="brandname">
+            Brand Name
+          </label>
           <input
-            id="username"
+            className="input"
+            id="brandname"
             type="text"
-            value={enteredName}
-            onChange={nameChangeHandler}
+            ref={brandnameInputRef}
           />
         </span>
-        <span>
-          <label htmlFor="phone">Phone</label>
+        <span className="span">
+          <label className="label" htmlFor="modelnum">
+            Model Number
+          </label>
           <input
-            id="phone"
-            type="number"
-            value={enteredPhone}
-            onChange={phoneChangeHandler}
+            className="input"
+            id="modelnum"
+            type="text"
+            ref={modelNumInputRef}
           />
         </span>
-        <span>
-          <button type="submit">Add</button>
+        <span className="span">
+          <label className="label" htmlFor="type">
+            Type
+          </label>
+          <input
+            className="input"
+            id="type"
+            type="text"
+            ref={typeInputRef}
+          />
+        </span>
+        <span className="span">
+          <button className="button" type="submit">
+            Add
+          </button>
+        </span>
+        <span className="span">
+          <button onClick={props.onAddEquipment} className="button" type="button">
+            Cancel
+          </button>
         </span>
       </Form>
     </Card>

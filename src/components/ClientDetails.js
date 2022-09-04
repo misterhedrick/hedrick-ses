@@ -1,28 +1,65 @@
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { query, onSnapshot } from "firebase/firestore";
 import { db } from "../firebase";
-import { doc } from "firebase/firestore";
+import { doc, collection, query, orderBy, onSnapshot } from "firebase/firestore";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPhone } from "@fortawesome/free-solid-svg-icons";
+import { faPhone, faCirclePlus } from "@fortawesome/free-solid-svg-icons";
+import AddEquipmentForm from "./AddEquipmentForm";
+import Pill from "./UI/Pill";
+import styles from "../styles/ClientDetails.module.scss";
 
 const ClientDetails = (props) => {
   const phoneIcon = <FontAwesomeIcon icon={faPhone} size="1x" />;
+  const plusIcon = <FontAwesomeIcon icon={faCirclePlus} size="4x" />;
   const params = useParams();
   const [client, setClient] = useState([]);
+  const [equipment, setEquipment] = useState([]);
+  const [isAddingEquipment, setIsAddingEquipment] = useState(false);
+
+  const isAddingEquipmentClickHandler = () => {
+    setIsAddingEquipment(!isAddingEquipment);
+  };
 
   useEffect(() => {
-    const q = query(doc(db, "clients", params.clientId));
-    onSnapshot(q, (querySnapshot) => {
+    const docq = query(doc(db, "clients", params.clientId));
+    onSnapshot(docq, (querySnapshot) => {
       setClient(querySnapshot.data());
     });
   }, []);
 
-  console.log("client: ", client);
-  const phoneLink = 'tel:' + client.phone;
+  useEffect(() => {
+    const colq = query(collection(db, `clients/${params.clientId}/equipment`), orderBy('brandName', 'asc'));
+    onSnapshot(colq, (querySnapshot) => {
+      setEquipment(
+        querySnapshot.docs.map((doc) => ({
+          id: doc.id,
+          data: doc.data(),
+        }))
+      );
+    });
+  }, []);
+  const phoneLink = "tel:" + client.phone;
   return (
     <div>
-      <h1 className="title">{client.name} <a href={phoneLink}>{phoneIcon}</a></h1>
+      <h1 className="title">
+        {client.name} <a href={phoneLink}>{phoneIcon}</a>
+      </h1>
+      {equipment.map((e) => (
+        <Pill id={e.id} key={e.id}>
+          <Link to={e.id}>
+            <h1>{e.data.brandName}</h1>
+          </Link>
+        </Pill>
+      ))}
+      {isAddingEquipment && <AddEquipmentForm onAddEquipment={isAddingEquipmentClickHandler} id={params.clientId}/>}
+      {!isAddingEquipment && (
+        <div
+          onClick={isAddingEquipmentClickHandler}
+          className={styles.AddEquipment}
+        >
+          {plusIcon}
+        </div>
+      )}
     </div>
   );
 };
