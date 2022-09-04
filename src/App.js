@@ -5,11 +5,10 @@ import Home from "./pages/Home";
 import Auth from "./pages/Auth";
 import ClientDetails from "./pages/ClientDetails";
 import ItemDetails from "./pages/ItemDetails";
+import AddClient from "./pages/AddClient";
 
 import "./styles/reset.css";
 import "./styles/setup.scss";
-import AddClient from "./pages/AddClient";
-
 
 function App() {
   return (
@@ -23,7 +22,6 @@ function App() {
         <Route path="/add" element={<AddClient />} />
       </Routes>
       <Footer />
-      {/* <LoginModal /> */}
     </div>
   );
 }

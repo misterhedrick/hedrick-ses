@@ -1,17 +1,15 @@
 import { useState, useRef, useContext } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
-import AuthContext from "../../store/auth-context";
-import Card from "../UI/Card";
-import Form from "../UI/Form";
+import AuthContext from "../store/auth-context";
+import Card from "./UI/Card";
+import Form from "./UI/Form";
 
 const AuthForm = () => {
   const navigate = useNavigate();
   const emailInputRef = useRef();
   const passwordInputRef = useRef();
-
   const authCtx = useContext(AuthContext);
-
   const [isLogin, setIsLogin] = useState(true);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -24,8 +22,6 @@ const AuthForm = () => {
 
     const enteredEmail = emailInputRef.current.value;
     const enteredPassword = passwordInputRef.current.value;
-
-    // optional: Add validation
 
     setIsLoading(true);
     let url;
@@ -54,10 +50,6 @@ const AuthForm = () => {
         } else {
           return res.json().then((data) => {
             let errorMessage = "Authentication failed!";
-            // if (data && data.error && data.error.message) {
-            //   errorMessage = data.error.message;
-            // }
-
             throw new Error(errorMessage);
           });
         }
