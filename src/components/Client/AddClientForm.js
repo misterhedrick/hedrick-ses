@@ -13,37 +13,40 @@ const AddClientForm = (props) => {
     event.preventDefault();
     const name = nameInputRef.current.value;
     const phone = phoneInputRef.current.value;
-    const newclient = {name: name, phone: phone};
+    const newclient = { name: name, phone: phone };
     try {
       await addDoc(collection(db, "clients"), newclient);
     } catch (err) {
       alert(err);
     }
-    nameInputRef.current.value = '';
-    phoneInputRef.current.value = '';
+    nameInputRef.current.value = "";
+    phoneInputRef.current.value = "";
   };
 
   return (
     <Card>
       <Form onSubmit={addClientHandler}>
-        <span>
-          <label htmlFor="username">Name</label>
-          <input
-            id="name"
-            type="text"
-            ref={nameInputRef}
-          />
+        <span className="span">
+          <label className="label" htmlFor="username">
+            Name
+          </label>
+          <input className="input" id="name" type="text" ref={nameInputRef} />
         </span>
-        <span>
-          <label htmlFor="phone">Phone</label>
+        <span className="span">
+          <label className="label" htmlFor="phone">
+            Phone
+          </label>
           <input
+            className="input"
             id="phone"
             type="number"
             ref={phoneInputRef}
           />
         </span>
-        <span>
-          <button type="submit">Add</button>
+        <span className="span">
+          <button className="button" type="submit">
+            Add
+          </button>
         </span>
       </Form>
     </Card>

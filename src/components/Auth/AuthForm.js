@@ -78,26 +78,33 @@ const AuthForm = () => {
     <Card>
       <Form onSubmit={submitHandler}>
         <h1>{isLogin ? "Login" : "Sign Up"}</h1>
-        <span>
-          <label htmlFor="email">Your Email</label>
-          <input type="email" id="email" required ref={emailInputRef} />
+        <span className="span">
+          <label className="label" htmlFor="email">
+            Your Email
+          </label>
+          <input className="input" type="email" id="email" required ref={emailInputRef} />
         </span>
-        <span>
-          <label htmlFor="password">Your Password</label>
+        <span className="span">
+          <label className="label" htmlFor="password">
+            Your Password
+          </label>
           <input
+            className="input"
             type="password"
             id="password"
             required
             ref={passwordInputRef}
           />
         </span>
-        <span>
+        <span className="span">
           {!isLoading && (
-            <button>{isLogin ? "Login" : "Create Account"}</button>
+            <button className="button">
+              {isLogin ? "Login" : "Create Account"}
+            </button>
           )}
           {isLoading && <p>Sending request...</p>}
         </span>
-        <span>
+        <span className="span">
           <h5 onClick={switchAuthModeHandler}>
             {isLogin ? "Create new account" : "Login with existing account"}
           </h5>
