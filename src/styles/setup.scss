@@ -103,6 +103,23 @@ h2 {
   }
 }
 
+h5 {
+  font-size: 2em;
+  text-decoration: underline;
+
+  @media #{$mq-medium} {
+    font-size: 5.3em;
+  }
+
+  @media #{$mq-large} {
+    font-size: 3.25em;
+  }
+
+  @media #{$mq-xlarge} {
+    font-size: 4.5em;
+  }
+}
+
 p {
   font-size: 1.42em;
   font-family: $Pica;

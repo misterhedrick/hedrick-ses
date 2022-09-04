@@ -11,11 +11,9 @@ span {
     margin: .5em 0;
     align-items: center;
 }
-span:last-child {
+span > button {
     justify-content: center;
-    button {
-        width: 100%;
-    }
+    width: 100%;
 }
 label {
     font-size: 2em;
@@ -36,4 +34,7 @@ button {
 button:active {
     background-color: $darker-bg;
     color: $dark-text;
+}
+h5 {
+    justify-content: center;
 }
