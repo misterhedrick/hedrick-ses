@@ -1,11 +1,11 @@
 import { Route, Routes } from "react-router-dom";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import Home from "./pages/Home";
-import Auth from "./pages/Auth";
-import ClientDetails from "./pages/ClientDetails";
-import ItemDetails from "./pages/ItemDetails";
-import AddClient from "./pages/AddClient";
+import HomePage from "./pages/HomePage";
+import AuthPage from "./pages/AuthPage";
+import ClientDetailsPage from "./pages/ClientDetailsPage";
+import ItemDetailsPage from "./pages/ItemDetailsPage";
+import AddClientPage from "./pages/AddClientPage";
 
 import "./styles/reset.css";
 import "./styles/setup.scss";
@@ -15,11 +15,11 @@ function App() {
     <div>
       <Header />
       <Routes>
-        <Route path="" element={<Home />} />
-        <Route path="/client/:clientId" element={<ClientDetails />} />
-        <Route path="/client/:clientId/:itemId" element={<ItemDetails />} />
-        <Route path="/auth" element={<Auth />} />
-        <Route path="/add" element={<AddClient />} />
+        <Route path="" element={<HomePage />} />
+        <Route path="/client/:clientId" element={<ClientDetailsPage />} />
+        <Route path="/client/:clientId/:itemId" element={<ItemDetailsPage />} />
+        <Route path="/auth" element={<AuthPage />} />
+        <Route path="/add" element={<AddClientPage />} />
       </Routes>
       <Footer />
     </div>

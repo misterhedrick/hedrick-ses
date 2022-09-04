@@ -1,9 +1,9 @@
 import ClientList from "../components/ClientList";
 
-const Home = (props) => {
+const HomePage = (props) => {
     return (
         <ClientList />
     );
 }
 
-export default Home;
+export default HomePage;

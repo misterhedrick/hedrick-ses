@@ -1,8 +1,8 @@
 import AddClientForm from "../components/AddClientForm";
 
-const AddClient = (props) => {
+const AddClientPage = (props) => {
   
   return <AddClientForm></AddClientForm>;
 };
 
-export default AddClient;
+export default AddClientPage;

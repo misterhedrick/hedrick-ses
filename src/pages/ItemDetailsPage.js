@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 
-const ItemDetails = (props) => {
+const ItemDetailsPage = (props) => {
   const params = useParams();
   console.log("params " + params.itemId);
 
@@ -12,4 +12,4 @@ const ItemDetails = (props) => {
   );
 };
 
-export default ItemDetails;
+export default ItemDetailsPage;
