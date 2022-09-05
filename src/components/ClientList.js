@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { collection, query, orderBy, onSnapshot } from "firebase/firestore";
 import { db } from "../firebase";
 
-const ClientList = (props) => {
+const ClientList = () => {
   const [clients, setClients] = useState([]);
 
   /* function to get all tasks from firestore in realtime */

@@ -8,7 +8,7 @@ import AddEquipmentForm from "./AddEquipmentForm";
 import Pill from "./UI/Pill";
 import styles from "../styles/ClientDetails.module.scss";
 
-const ClientDetails = (props) => {
+const ClientDetails = () => {
   const phoneIcon = <FontAwesomeIcon icon={faPhone} size="1x" />;
   const plusIcon = <FontAwesomeIcon icon={faCirclePlus} size="4x" />;
   const trashIcon = <FontAwesomeIcon icon={faTrashCan} size="1x" />;
@@ -27,7 +27,7 @@ const ClientDetails = (props) => {
     onSnapshot(docq, (querySnapshot) => {
       setClient(querySnapshot.data());
     });
-  }, []);
+  }, [params]);
 
   useEffect(() => {
     const colq = query(collection(db, `clients/${params.clientId}/equipment`), orderBy('brandName', 'asc'));
@@ -39,7 +39,7 @@ const ClientDetails = (props) => {
         }))
       );
     });
-  }, []);
+  }, [params]);
 
   /* function to delete a document from firstore */ 
   const handleDelete = async () => {

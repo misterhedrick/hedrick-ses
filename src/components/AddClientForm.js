@@ -4,9 +4,8 @@ import { db } from "../firebase";
 import { collection, addDoc } from "firebase/firestore";
 import Card from "./UI/Card";
 import Form from "./UI/Form";
-import { Navigate } from "react-router-dom";
 
-const AddClientForm = (props) => {
+const AddClientForm = () => {
   const nameInputRef = useRef();
   const phoneInputRef = useRef();
   const navigate = useNavigate();

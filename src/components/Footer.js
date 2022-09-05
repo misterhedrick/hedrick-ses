@@ -15,7 +15,7 @@ const plusIcon = <FontAwesomeIcon icon={faCirclePlus} size="3x" />;
 const houseIcon = <FontAwesomeIcon icon={faHouse} size="3x" />;
 const userIcon = <FontAwesomeIcon icon={faUser} size="3x" />;
 
-const Footer = (props) => {
+const Footer = () => {
   const authCtx = useContext(AuthContext);
   const navigate = useNavigate();
   const authAdminRouteClickHandler = () => {

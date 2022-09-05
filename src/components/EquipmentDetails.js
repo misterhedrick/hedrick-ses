@@ -7,7 +7,7 @@ import { faCirclePlus, faTrashCan } from "@fortawesome/free-solid-svg-icons";
 import AddDetailForm from "./AddDetailForm";
 import styles from "../styles/EquipmentDetails.module.scss";
 
-const EquipmentDetails = (props) => {
+const EquipmentDetails = () => {
   const plusIcon = <FontAwesomeIcon icon={faCirclePlus} size="4x" />;
   const trashIcon = <FontAwesomeIcon icon={faTrashCan} size="1x" />;
   const params = useParams();
@@ -25,7 +25,7 @@ const EquipmentDetails = (props) => {
     onSnapshot(q, (querySnapshot) => {
       setEquipment(querySnapshot.data());
     });
-  }, []);
+  }, [params]);
 
   /* function to delete a document from firstore */
   const handleDelete = async () => {
