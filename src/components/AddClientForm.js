@@ -1,12 +1,15 @@
 import { useRef } from "react";
+import { useNavigate} from "react-router-dom"; 
 import { db } from "../firebase";
 import { collection, addDoc } from "firebase/firestore";
 import Card from "./UI/Card";
 import Form from "./UI/Form";
+import { Navigate } from "react-router-dom";
 
 const AddClientForm = (props) => {
   const nameInputRef = useRef();
   const phoneInputRef = useRef();
+  const navigate = useNavigate();
 
   /* function to add new task to firestore */
   const addClientHandler = async (event) => {
@@ -16,6 +19,7 @@ const AddClientForm = (props) => {
     const newclient = { name: name, phone: phone };
     try {
       await addDoc(collection(db, "clients"), newclient);
+      navigate(-1);
     } catch (err) {
       alert(err);
     }

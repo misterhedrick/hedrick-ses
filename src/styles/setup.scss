@@ -129,3 +129,8 @@ p {
   margin: 0 auto;
   text-align: center;
 }
+.deleteIcon {
+  position: absolute;
+  top: calc($HeaderHeight + .3em);
+  right: .5em;
+}
