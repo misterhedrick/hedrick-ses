@@ -1,15 +1,16 @@
-import { useState, useRef, useContext } from "react";
+import { useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { authActions } from "../store/auth";
 
-import AuthContext from "../store/auth-context";
 import Card from "./UI/Card";
 import Form from "./UI/Form";
 
 const AuthForm = () => {
+  const dispatch = useDispatch();
   const navigate = useNavigate();
   const emailInputRef = useRef();
   const passwordInputRef = useRef();
-  const authCtx = useContext(AuthContext);
   const [isLogin, setIsLogin] = useState(true);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -55,10 +56,7 @@ const AuthForm = () => {
         }
       })
       .then((data) => {
-        const expirationTime = new Date(
-          new Date().getTime() + +data.expiresIn * 1000
-        );
-        authCtx.login(data.idToken, expirationTime.toISOString());
+        dispatch(authActions.login(data));
         navigate("/");
       })
       .catch((err) => {

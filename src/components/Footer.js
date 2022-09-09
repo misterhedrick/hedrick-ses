@@ -1,6 +1,5 @@
-import { useContext } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
-import AuthContext from "../store/auth-context";
+import { useSelector } from "react-redux";
 import styles from "../styles/Footer.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -16,10 +15,10 @@ const houseIcon = <FontAwesomeIcon icon={faHouse} size="3x" />;
 const userIcon = <FontAwesomeIcon icon={faUser} size="3x" />;
 
 const Footer = () => {
-  const authCtx = useContext(AuthContext);
+  const isAuth = useSelector(state => state.auth.isAuthenticated);
   const navigate = useNavigate();
   const authAdminRouteClickHandler = () => {
-    if (authCtx.isLoggedIn) {
+    if (isAuth) {
       navigate("/admin");
     } else {
       navigate("/auth");
